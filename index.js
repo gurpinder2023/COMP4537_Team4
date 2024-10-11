@@ -77,7 +77,7 @@ const server = http.createServer((req, res) => {
 
       // Input validation
       if (typeof word !== 'string' || typeof definition !== 'string'|| 
-        !/^[A-Za-z]+$/.test(word) || !/^[A-Za-z]+$/.test(definition)) {
+        !/^[A-Za-z\s]+$/.test(word) || !/^[A-Za-z\s]+$/.test(definition)) {
         return sendErrorResponse(res, 400, messages.invalidInput);
       }
 
